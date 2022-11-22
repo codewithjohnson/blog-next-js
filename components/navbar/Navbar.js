@@ -51,7 +51,13 @@ const Navbar = () => {
   }`;
 
   const handleNavMenuClassName = `${styles.navList} ${
-    showMenu ? styles.menuActive : ""
+    currentRoute === "" && showMenu
+      ? styles.menuActive
+      : currentRoute === "posts" && showMenu
+      ? styles.postMenuActive
+      : currentRoute === "about" && showMenu
+      ? styles.aboutMenuActive
+      : ""
   }`;
 
   return (
